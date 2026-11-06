@@ -1,4 +1,4 @@
-const backendDomain = process.env.BACKEND_DOMAIN;
+const backendDomain = `http://${process.env.BACKEND_DOMAIN}:8083`;
 const InternalApiKey = process.env.INTERNAL_API_KEY;
 if (!backendDomain) {
   throw new Error("Backend Domain belum diset di environment server");
