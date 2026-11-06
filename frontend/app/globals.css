@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+input {
+  @apply px-1.5 focus:outline-none;
+}
+
+input[type]::-webkit-calendar-picker-indicator {
+  @apply hidden;
+}
+
+/* input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: transparent;
+  background: transparent;
+} */
+
+@keyframes wave {
+  0% {
+    transform: translateY(-10px) scale(0.9);
+  }
+  100% {
+    transform: translateY(10px) scale(1.1);
+  }
+}
+
+.wave {
+  animation: wave 0.8s ease-in-out infinite alternate;
+}
