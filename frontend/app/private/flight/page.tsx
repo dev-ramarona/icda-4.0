@@ -6,6 +6,7 @@ import FetchDetail from "./ui/detail/fetch";
 import FetchInsight from "./ui/insight/fetch";
 import { ListInitial } from "./handlers/flight";
 import { LibFormatNumberToDate } from "@/lib/format";
+import FetchInfo from "./ui/info/fetch";
 
 export default async function Page(props: {
   searchParams: Promise<queryFlightType>;
@@ -31,6 +32,11 @@ export default async function Page(props: {
     <main className="min-h-fit">
       <AssetHeader title="FLIGHT" desc="Revenue and Manifest dashboard" />
       <FetchInsight
+        querys={querys}
+        verifyPermit={verifyPermit}
+        initialData={initialData}
+      />
+      <FetchInfo
         querys={querys}
         verifyPermit={verifyPermit}
         initialData={initialData}

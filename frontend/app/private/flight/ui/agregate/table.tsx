@@ -14,10 +14,8 @@ import { agregatesType } from "../../models/model";
 
 export default function TableAgregate({
   arrayObj,
-  actionSet,
 }: {
   arrayObj: agregatesType[];
-  actionSet: React.Dispatch<React.SetStateAction<agregatesType | undefined>>;
 }) {
   return (
     <AssetLayoutScrolly className="h-120 p-3">

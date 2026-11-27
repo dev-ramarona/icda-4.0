@@ -13,11 +13,10 @@ export default function Agregate({
   querys: queryFlightType;
   dataAgregates: agregatesType[];
 }) {
-  const [agregateData, agregateSet] = useState<agregatesType>();
   return (
     <AssetLayoutGrid label="Agregate Table">
-      <SearchAgregates />
-      <TableAgregate actionSet={agregateSet} arrayObj={dataAgregates} />
+      <SearchAgregates querys={querys} />
+      <TableAgregate arrayObj={dataAgregates} />
     </AssetLayoutGrid>
   );
 }

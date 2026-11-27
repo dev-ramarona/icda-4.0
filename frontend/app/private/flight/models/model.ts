@@ -58,6 +58,38 @@ export type agregatesType = {
   total_revenue: number;
 };
 
+export type logType = {
+  primary_key: string;
+  airline_operating: string;
+  aircraft_type: string;
+  departure: string;
+  flight_hour: number;
+  flight_number_marketing: string;
+  flight_number_join: string;
+  flight_number_operating: string;
+  flight_status: string;
+  day_operating: string;
+  date_operating: number;
+  month_operating: number;
+  time_operating: number;
+  time_bucket_operating: string;
+  region: string;
+  route_operating: string;
+  seat_configuration: string;
+  total_seat_configuration: number;
+  total_passenger: number;
+  total_fare_nta: number;
+  revenue_perhour: number;
+  cost_perhour: number;
+  total_taxes_yq: number;
+  total_fare_ancillary: number;
+  total_fare_q: number;
+  total_taxes_yr: number;
+  load_factor: number;
+  total_cost: number;
+  total_revenue: number;
+};
+
 export type detailType = {
   primary_key: string;
   airline: string;

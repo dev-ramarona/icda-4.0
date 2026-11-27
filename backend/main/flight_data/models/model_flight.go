@@ -27,6 +27,7 @@ type FlightInsightTrend struct {
 	Lf           float64 `bson:"lf" json:"lf"`
 	Flh          float64 `bson:"flh" json:"flh"`
 	Rev          float64 `bson:"rev" json:"rev"`
+	Cargo        float64 `bson:"cargo" json:"cargo"`
 	Cost         float64 `bson:"cost" json:"cost"`
 	Rph          float64 `bson:"rph" json:"rph"`
 	Rpp          float64 `bson:"rpp" json:"rpp"`
@@ -43,6 +44,7 @@ type FlightInsightTopbot struct {
 	LfDaily             float64 `bson:"lf_daily" json:"lf_daily"`
 	FlhDaily            float64 `bson:"flh_daily" json:"flh_daily"`
 	RevDaily            float64 `bson:"rev_daily" json:"rev_daily"`
+	CargoDaily          float64 `bson:"cargo_daily" json:"cargo_daily"`
 	CostDaily           float64 `bson:"cost_daily" json:"cost_daily"`
 	RphDaily            float64 `bson:"rph_daily" json:"rph_daily"`
 	CphDaily            float64 `bson:"cph_daily" json:"cph_daily"`
@@ -61,6 +63,7 @@ type FlightInsightTopbot struct {
 	LfMonthly           float64 `bson:"lf_monthly" json:"lf_monthly"`
 	FlhMonthly          float64 `bson:"flh_monthly" json:"flh_monthly"`
 	RevMonthly          float64 `bson:"rev_monthly" json:"rev_monthly"`
+	CargoMonthly        float64 `bson:"cargo_monthly" json:"cargo_monthly"`
 	CostMonthly         float64 `bson:"cost_monthly" json:"cost_monthly"`
 	RphMonthly          float64 `bson:"rph_monthly" json:"rph_monthly"`
 	CphMonthly          float64 `bson:"cph_monthly" json:"cph_monthly"`
@@ -82,6 +85,7 @@ type FlightInsightTbucket struct {
 	LfDaily             float64 `bson:"lf_daily" json:"lf_daily"`
 	FlhDaily            float64 `bson:"flh_daily" json:"flh_daily"`
 	RevDaily            float64 `bson:"rev_daily" json:"rev_daily"`
+	CargoDaily          float64 `bson:"cargo_daily" json:"cargo_daily"`
 	CostDaily           float64 `bson:"cost_daily" json:"cost_daily"`
 	RphDaily            float64 `bson:"rph_daily" json:"rph_daily"`
 	CphDaily            float64 `bson:"cph_daily" json:"cph_daily"`
@@ -95,6 +99,7 @@ type FlightInsightTbucket struct {
 	LfMonthly           float64 `bson:"lf_monthly" json:"lf_monthly"`
 	FlhMonthly          float64 `bson:"flh_monthly" json:"flh_monthly"`
 	RevMonthly          float64 `bson:"rev_monthly" json:"rev_monthly"`
+	CargoMonthly        float64 `bson:"cargo_monthly" json:"cargo_monthly"`
 	CostMonthly         float64 `bson:"cost_monthly" json:"cost_monthly"`
 	RphMonthly          float64 `bson:"rph_monthly" json:"rph_monthly"`
 	CphMonthly          float64 `bson:"cph_monthly" json:"cph_monthly"`
@@ -153,4 +158,5 @@ type FlightAgregates struct {
 	Load_factor              float64 `bson:"load_factor,omitempty" json:"load_factor,omitempty"`
 	Total_cost               float64 `bson:"total_cost,omitempty" json:"total_cost,omitempty"`
 	Total_revenue            float64 `bson:"total_revenue,omitempty" json:"total_revenue,omitempty"`
+	Cargo_revenue            float64 `bson:"cargo_revenue,omitempty" json:"cargo_revenue,omitempty"`
 }

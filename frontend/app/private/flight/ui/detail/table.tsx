@@ -8,16 +8,13 @@ import {
   AssetLayoutThead,
 } from "@/assets/layout";
 import { FileEditIcon } from "lucide-react";
-
 import AssetCard from "@/assets/card";
-import { detailType } from "../../models/model";
+import { agregatesType, detailType } from "../../models/model";
 
 export default function TableDetail({
   arrayObj,
-  actionSet,
 }: {
-  arrayObj: detailType[];
-  actionSet: React.Dispatch<React.SetStateAction<detailType | undefined>>;
+  arrayObj: agregatesType[];
 }) {
   return (
     <AssetLayoutScrolly className="h-120 p-3">

@@ -39,8 +39,10 @@ export default function TrendChartInsight({
   const val = useMemo(() => {
     if (querys.trend_metric === "profit") {
       return { bar: "profit", linea: "", lineb: "lf" };
-    } else if (querys.trend_metric === "rev")
+    } else if (querys.trend_metric === "rev") {
       return { bar: "rev", linea: "cost", lineb: "flight" };
+    } else if (querys.trend_metric === "cargo")
+      return { bar: "cargo", lineb: "flight" };
     return { bar: "rph", linea: "cph", lineb: "lf" };
   }, [querys]);
 
@@ -81,7 +83,7 @@ export default function TrendChartInsight({
               className="h-8 w-25"
               queryKey="trend_metric"
               titleInput="Metric"
-              selectVal={["profit", "rev", "rph"]}
+              selectVal={["profit", "rev", "rph", "cargo"]}
               queryVal={querys.trend_metric}
               needQuery={true}
             >

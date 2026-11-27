@@ -74,7 +74,9 @@ export default function Page() {
               <KeyRound />
             </div>
           </AssetInput>
-          <div className="py-1 text-red-600 duration-300">{response}</div>
+          <div className="w-full py-1 text-red-600 duration-300">
+            {response}
+          </div>
           <AssetButton
             className="h-10 w-full px-1.5"
             active="pasive"

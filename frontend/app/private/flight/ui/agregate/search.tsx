@@ -18,8 +18,15 @@ import {
   TicketsPlane,
 } from "lucide-react";
 import AssetButton from "@/assets/button";
+import { queryFlightType } from "../../models/model";
 
-export default function SearchAgregates({ searchVal }: { searchVal?: string }) {
+export default function SearchAgregates({
+  searchVal,
+  querys,
+}: {
+  searchVal?: string;
+  querys: queryFlightType;
+}) {
   const [queryReplace, wait] = HandleQueryReplace();
   const [tempval, tempvalSet] = useState("");
   const funcSearch = (search: string) =>

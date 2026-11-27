@@ -221,10 +221,7 @@ func Insight(c *gin.Context) {
 
 	// Trend Top bottom
 	topbotInsight := []modelFlight.FlightInsightTopbot{}
-	fmt.Println(findSpesific["find_topbot"])
-	fmt.Println(findSpesific["sort_topbot"])
 	for _, topbot := range slices.Data[0].Topbot {
-		fmt.Println(topbot)
 		topbot.LfMonthly = math.Round(topbot.LfMonthly*1000) / 10
 		topbot.LfDaily = math.Round(topbot.LfDaily*1000) / 10
 		topbot.ProfitPrstncMonthly = math.Round(topbot.ProfitPrstncMonthly*1000) / 10

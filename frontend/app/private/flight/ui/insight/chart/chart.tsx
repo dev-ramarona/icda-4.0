@@ -28,7 +28,7 @@ export default function ChartInsight({
           />
         </AssetLayoutFix>
       </div>
-      <div className="flex flex-col items-center justify-center gap-3 xl:flex-row">
+      <div className="flex flex-col items-center justify-center gap-3 px-1.5 xl:flex-row">
         <div
           className={`relative h-130 w-full xl:h-96 ${isOpen == 1 ? "xl:w-9/12" : isOpen == 2 ? "xl:w-3/12" : "xl:w-1/2"} duration-300`}
         >

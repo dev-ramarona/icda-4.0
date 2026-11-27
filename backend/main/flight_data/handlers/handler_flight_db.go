@@ -51,6 +51,7 @@ func GetInsight(findGeneral, findSpesific bson.M, sort bson.D, page, limit int) 
 				{Key: "pax", Value: bson.D{{Key: "$sum", Value: "$total_passenger"}}},
 				{Key: "flh", Value: bson.D{{Key: "$sum", Value: "$flight_hour"}}},
 				{Key: "rev", Value: bson.D{{Key: "$sum", Value: "$total_revenue"}}},
+				{Key: "cargo", Value: bson.D{{Key: "$sum", Value: "$cargo_revenue"}}},
 				{Key: "cost", Value: bson.D{{Key: "$sum", Value: bson.D{
 					{Key: "$multiply", Value: bson.A{"$cost_perhour", "$flight_hour"}}}}}},
 				{Key: "profit_flight", Value: bson.D{{Key: "$sum", Value: bson.D{
@@ -100,6 +101,7 @@ func GetInsight(findGeneral, findSpesific bson.M, sort bson.D, page, limit int) 
 				{Key: "pax_monthly", Value: bson.D{{Key: "$sum", Value: "$total_passenger"}}},
 				{Key: "flh_monthly", Value: bson.D{{Key: "$sum", Value: "$flight_hour"}}},
 				{Key: "rev_monthly", Value: bson.D{{Key: "$sum", Value: "$total_revenue"}}},
+				{Key: "cargo_monthly", Value: bson.D{{Key: "$sum", Value: "$cargo_revenue"}}},
 				{Key: "cost_monthly", Value: bson.D{{Key: "$sum", Value: bson.D{
 					{Key: "$multiply", Value: bson.A{"$cost_perhour", "$flight_hour"}}}}}},
 				{Key: "profit_flight_monthly", Value: bson.D{{Key: "$sum", Value: bson.D{
@@ -120,6 +122,8 @@ func GetInsight(findGeneral, findSpesific bson.M, sort bson.D, page, limit int) 
 					{Key: "$cond", Value: bson.A{findSpesific["find_last_date"], "$flight_hour", 0}}}}}},
 				{Key: "rev_daily", Value: bson.D{{Key: "$sum", Value: bson.D{
 					{Key: "$cond", Value: bson.A{findSpesific["find_last_date"], "$total_revenue", 0}}}}}},
+				{Key: "cargo_daily", Value: bson.D{{Key: "$sum", Value: bson.D{
+					{Key: "$cond", Value: bson.A{findSpesific["find_last_date"], "$cargo_revenue", 0}}}}}},
 				{Key: "cost_daily", Value: bson.D{{Key: "$sum", Value: bson.D{
 					{Key: "$cond", Value: bson.A{findSpesific["find_last_date"], "$total_cost", 0}}}}}},
 				{Key: "profit_flight_daily", Value: bson.D{{Key: "$sum", Value: bson.D{
@@ -216,6 +220,7 @@ func GetInsight(findGeneral, findSpesific bson.M, sort bson.D, page, limit int) 
 				{Key: "pax_monthly", Value: bson.D{{Key: "$sum", Value: "$total_passenger"}}},
 				{Key: "flh_monthly", Value: bson.D{{Key: "$sum", Value: "$flight_hour"}}},
 				{Key: "rev_monthly", Value: bson.D{{Key: "$sum", Value: "$total_revenue"}}},
+				{Key: "cargo_monthly", Value: bson.D{{Key: "$sum", Value: "$cargo_revenue"}}},
 				{Key: "cost_monthly", Value: bson.D{{Key: "$sum", Value: bson.D{
 					{Key: "$multiply", Value: bson.A{"$cost_perhour", "$flight_hour"}}}}}},
 				{Key: "profit_flight_monthly", Value: bson.D{{Key: "$sum", Value: bson.D{
@@ -231,8 +236,8 @@ func GetInsight(findGeneral, findSpesific bson.M, sort bson.D, page, limit int) 
 					{Key: "$cond", Value: bson.A{findSpesific["find_last_date"], "$total_passenger", 0}}}}}},
 				{Key: "flh_daily", Value: bson.D{{Key: "$sum", Value: bson.D{
 					{Key: "$cond", Value: bson.A{findSpesific["find_last_date"], "$flight_hour", 0}}}}}},
-				{Key: "rev_daily", Value: bson.D{{Key: "$sum", Value: bson.D{
-					{Key: "$cond", Value: bson.A{findSpesific["find_last_date"], "$total_revenue", 0}}}}}},
+				{Key: "cargo_daily", Value: bson.D{{Key: "$sum", Value: bson.D{
+					{Key: "$cond", Value: bson.A{findSpesific["find_last_date"], "$cargo_revenue", 0}}}}}},
 				{Key: "cost_daily", Value: bson.D{{Key: "$sum", Value: bson.D{
 					{Key: "$cond", Value: bson.A{findSpesific["find_last_date"], bson.D{
 						{Key: "$multiply", Value: bson.A{"$cost_perhour", "$flight_hour"}}}, 0}}}}}},

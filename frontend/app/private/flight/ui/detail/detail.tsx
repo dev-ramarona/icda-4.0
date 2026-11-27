@@ -1,8 +1,7 @@
 "use client";
 
 import AssetLayoutGrid from "@/assets/layout";
-import { agregatesType, queryFlightType } from "../../models/model";
-import { useState } from "react";
+import { agregatesType, detailType, queryFlightType } from "../../models/model";
 import TableDetail from "./table";
 import SearchDetail from "./search";
 
@@ -13,11 +12,10 @@ export default function Detail({
   querys: queryFlightType;
   dataAgregates: agregatesType[];
 }) {
-  const [agregateData, agregateSet] = useState<agregatesType>();
   return (
     <AssetLayoutGrid label="Detail Table">
       <SearchDetail />
-      <TableDetail actionSet={agregateSet} arrayObj={dataAgregates} />
+      <TableDetail arrayObj={dataAgregates} />
     </AssetLayoutGrid>
   );
 }
